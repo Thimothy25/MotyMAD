@@ -1,4 +1,4 @@
-import Header from './Header';
+import PageHeader from './PageHeader';
 import TextInput from './TexsInput';
 
-export {Header, TextInput};
+export {PageHeader, TextInput};

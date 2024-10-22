@@ -1,12 +1,12 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
-import {Header, TextInput} from '../../components/molecules';
+import {PageHeader, TextInput} from '../../components/molecules';
 import {Button, Gap} from '../../components/atoms';
 
 const SignIn = () => {
   return (
     <View style={styles.container}>
-      <Header text="Sign In" />
+      <PageHeader text="Sign In" />
       <View style={styles.contentWrapper}>
         <TextInput label="Email Addres" placeholder="Type your email address" />
         <Gap height={16} />

@@ -7,15 +7,16 @@ import {
 } from 'react-native';
 import React from 'react';
 import {Button, Gap, PageHeader, TextInput} from '../../components';
+import {BackButton} from '../../assets/icon';
 
 const SignUp = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
-      <PageHeader
-        label="Sign Up"
-        backButton={true}
-        onPress={() => navigation.goBack()}
-      />
+      <View style={styles.headerWrapper}>
+        <BackButton style={styles.back} />
+
+        <PageHeader label="Sign Up" />
+      </View>
       <Gap height={24} />
       <View style={styles.contentWrapper}>
         <View style={styles.profileContainer}>
@@ -37,10 +38,7 @@ const SignUp = ({navigation}) => {
         <Gap height={16} />
         <TextInput label="Password" placeholder="Type your password" />
         <Gap height={24} />
-        <Button
-          label="Continue"
-          onPress={() => navigation.navigate('SignIn')}
-        />
+        <Button text="Continue" onPress={() => navigation.navigate('SignIn')} />
       </View>
     </ScrollView>
   );
@@ -51,6 +49,12 @@ export default SignUp;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  headerWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center', // Align items vertically center
+    paddingHorizontal: 24,
+    paddingTop: 16, // Optional padding
   },
   contentWrapper: {
     backgroundColor: '#FFFFFF',
@@ -85,5 +89,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
     width: 40,
     textAlign: 'center',
+  },
+  back: {
+    marginRight: 10,
   },
 });
