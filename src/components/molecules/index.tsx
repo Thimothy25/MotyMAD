@@ -1,4 +1,4 @@
 import Header from './Header';
 import TextInput from './TexsInput';
-
-export {Header, TextInput};
+import Transactions from './Transactions';
+export {Header, TextInput, Transactions};

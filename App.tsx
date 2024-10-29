@@ -1,6 +1,6 @@
 import React from 'react';
 import SplashScreen from './src/pages/SplashScreen';
-import SignIn from './src/pages/Singin';
+import SignIn from './src/pages/SignIn';
 import SignUp from './src/pages/SignUp';
 import Home from './src/pages/Home';
 import {NavigationContainer} from '@react-navigation/native';

@@ -1,4 +1,4 @@
 import Logo from './Logo.svg';
-import ArrowBack from './ArrowBack.svg';
+import BackButton from './BackButton';
 import NullPhoto from './null-photo.png';
-export {Logo, ArrowBack, NullPhoto};
+export {Logo, BackButton, NullPhoto};

@@ -1,52 +1,30 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {ArrowBack} from '../../../assets/icon';
+import {Button} from '../../atoms';
 
-const Button = ({
-  color = '#02CF8E',
-  text,
-  textColor = '#020202',
-  type,
-  icon,
-  onPress,
-}) => {
-  if (type === 'icon-only') {
-    return (
-      <TouchableOpacity
-        activeOpacity={0.5}
-        style={styles.backButton}
-        onPress={onPress}>
-        {icon === 'arrow-back' && <ArrowBack />}
-      </TouchableOpacity>
-    );
-  }
+const Header = ({text, backButton, onPress}) => {
   return (
-    <TouchableOpacity
-      style={styles.button(color)}
-      activeOpacity={0.5}
-      onPress={onPress}>
-      <Text style={styles.text(textColor)}>{text}</Text>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      {backButton && (
+        <Button type="icon-only" icon="arrow-back" onPress={onPress} />
+      )}
+      <Text style={styles.text}> {text}</Text>
+    </View>
   );
 };
 
-export default Button;
+export default Header;
 
 const styles = StyleSheet.create({
-  button: color => ({
-    backgroundColor: color,
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 12,
-  }),
-  text: textColor => ({
+  container: {
+    backgroundColor: '#FFFFFF',
+    paddingLeft: 24,
+    paddingVertical: 38,
+    flexDirection: 'row',
+  },
+  text: {
     fontFamily: 'Poppins-Medium',
-    fontSize: 14,
-    color: textColor,
-  }),
-  backButton: {
-    width: 50,
-    height: 50,
+    fontSize: 22,
+    marginLeft: 34,
   },
 });
